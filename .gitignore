@@ -1,0 +1,13 @@
+node_modules
+out
+vsc-extension-quickstart.md
+CHANGELOG.md
+.vscode
+.vscode-test
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
