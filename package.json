@@ -4,7 +4,11 @@
   "publisher": "KarnaukhMX",
   "description": "Simple vscode wrapper over CSS clamp function, allowing easy generation of clamp values",
   "icon": "logo.png",
-  "version": "0.0.4",
+  "version": "0.0.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karnauhmax/css-clamp-generator-vscode"
+  },
   "engines": {
     "vscode": "^1.87.0"
   },
