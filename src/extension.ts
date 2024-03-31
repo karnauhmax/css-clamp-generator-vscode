@@ -1,5 +1,4 @@
 	import * as vscode from 'vscode';
-	import { calculateClamp } from './utils/calculateClamp';
 	import { generateClamp } from './utils/generateClamp';
 
 	export function activate(context: vscode.ExtensionContext): void {
@@ -11,4 +10,3 @@
 					context.subscriptions.push(disposable);
 	}
 
-	export function deactivate() {}

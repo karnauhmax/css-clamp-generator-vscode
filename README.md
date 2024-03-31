@@ -16,4 +16,3 @@ In total you have four inputs:
 
 TODO: 
 - [ ] Unit testing
-- [ ] Ability to change input units (px, rems)
