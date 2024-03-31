@@ -23,7 +23,19 @@
         "command": "clamp-gen.generateClamp",
         "title": "Generate Clamp"
       }
-    ]
+    ],
+
+    "configuration": {
+      "title": "Clamp Generator",
+      "properties": {
+        "clamp-gen.units": {
+          "type": "string",
+          "default": "px",
+          "enum": ["px", "rem"],
+          "description": "Units used in clamp function"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",

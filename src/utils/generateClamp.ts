@@ -3,10 +3,10 @@ import { ClampSettings } from '../types/types';
 import { calculateClamp } from './calculateClamp';
 export async function generateClamp () {
  const { showInputBox, showErrorMessage, activeTextEditor } = vscode.window;
-
+ const units = vscode.workspace.getConfiguration("clamp-gen").units;
 
  const minValue = await showInputBox({
-     placeHolder: "Enter minimal value (px)",
+     placeHolder: `Enter minimal value (${units})`,
      validateInput(value) {
 
       if (!value.length) {
@@ -25,7 +25,7 @@ export async function generateClamp () {
  }
 
  const maxValue = await showInputBox({
-     placeHolder: "Enter max value (px)",	
+     placeHolder: `Enter max value (${units})`,	
      validateInput(value) {
 
       if (!value.length) {
@@ -49,7 +49,7 @@ export async function generateClamp () {
  }
 
  const viewportMin = await showInputBox({
-     placeHolder: "Enter minimal viewport",
+     placeHolder: "Enter minimal viewport (px)",
 
      validateInput(value) {
 
@@ -70,7 +70,7 @@ export async function generateClamp () {
  }
 
  const viewportMax = await showInputBox({
-     placeHolder: "Enter max viewport",
+     placeHolder: "Enter max viewport (px)",
 
      validateInput(value) {
 
