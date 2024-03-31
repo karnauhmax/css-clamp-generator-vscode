@@ -1,6 +1,12 @@
 import * as vscode from 'vscode';
 import { ClampSettings } from '../types/types';
 import { calculateClamp } from './calculateClamp';
+
+const filledBreakpoints = {
+    viewportMin: '',
+    viewportMax: '',
+};
+
 export async function generateClamp () {
  const { showInputBox, showErrorMessage, activeTextEditor } = vscode.window;
  const units = vscode.workspace.getConfiguration("clamp-gen").units;
@@ -50,6 +56,7 @@ export async function generateClamp () {
 
  const viewportMin = await showInputBox({
      placeHolder: "Enter minimal viewport (px)",
+     value: filledBreakpoints.viewportMin,
 
      validateInput(value) {
 
@@ -69,8 +76,12 @@ export async function generateClamp () {
   return;
  }
 
+ filledBreakpoints.viewportMin = viewportMin;
+
+
  const viewportMax = await showInputBox({
      placeHolder: "Enter max viewport (px)",
+     value: filledBreakpoints.viewportMax,
 
      validateInput(value) {
 
@@ -88,6 +99,8 @@ export async function generateClamp () {
   showErrorMessage('Please provide a correct maximal viewport');
   return;
  }
+
+ filledBreakpoints.viewportMax = viewportMax;
 
 
  if (activeTextEditor) {	
