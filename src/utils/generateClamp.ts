@@ -1,4 +1,4 @@
-import * as vscode from 'vscode';
+import { window, workspace } from 'vscode';
 import { ClampSettings } from '../types/types';
 import { calculateClamp } from './calculateClamp';
 
@@ -8,8 +8,8 @@ const filledBreakpoints = {
 };
 
 export async function generateClamp () {
- const { showInputBox, showErrorMessage, activeTextEditor } = vscode.window;
- const units = vscode.workspace.getConfiguration("clamp-gen").units;
+ const { showInputBox, showErrorMessage, activeTextEditor } = window;
+ const units = workspace.getConfiguration("clamp-gen").units;
 
  const minValue = await showInputBox({
      placeHolder: `Enter minimal value (${units})`,
