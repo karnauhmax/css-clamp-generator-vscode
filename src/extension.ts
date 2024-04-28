@@ -1,8 +1,8 @@
-	import * as vscode from 'vscode';
+	import { commands, ExtensionContext } from 'vscode';
 	import { generateClamp } from './utils/generateClamp';
 
-	export function activate(context: vscode.ExtensionContext): void {
-					const disposable = vscode.commands.registerCommand(
+	export function activate(context: ExtensionContext): void {
+					const disposable = commands.registerCommand(
 									"clamp-gen.generateClamp",
 									generateClamp
 					);
